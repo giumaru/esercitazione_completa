@@ -70,7 +70,56 @@ int ric(Anag libro[], int n)
 
 void modifica_campi(Anag libro[], int n)
 {
+    int campo;
+    
+    int cod=ric(libro, n);
+    
+    stampa(libro, n);
+    
+    cout<<"\nCampo da modificare:"<<endl<<"1) Codice ISBN"<<endl<<"2) Titolo"<<endl<<"3) Autore"<<endl<<"4) Editore";
+    cout<<endl<<"5) Anno di Pubblicazione"<<endl<<"6) Prezzo"<<endl<<"7) Tag del Genere"<<endl;
+    cin>>campo;
 
+    if(campo==1)
+    {
+        cout<<"Codice ISBN:";
+        cin>>libro[cod].isbn;
+    }
+
+    if(campo==2)
+    {
+        cout<<"Titolo : ";
+        cin>>libro[cod].titolo;
+    }
+
+    if(campo==3)
+    {
+        cout<<"Autore : ";
+        cin>>libro[cod].autore;
+    }
+
+    if(campo==4)
+    {
+        cout<<"Editore : ";
+        cin>>libro[cod].editore;
+    }
+
+    if(campo==5)
+    {
+        cout<<"Anno di Pubblicazione : ";
+        cin>>libro[cod].anno;
+    }
+    if(campo==6)
+    {
+        cout<<"Prezzo : ";
+        cin>>libro[cod].prezzo;
+    }
+
+    if(campo==7)
+    {
+        cout<<"Tag del Genere : ";
+        cin>>libro[cod].tag;
+    }
 }
 
 void elimina_record(Anag libro[], int n)
@@ -101,9 +150,6 @@ void menu(int n, Anag libro[], int m)
         cout<<endl;
 
     if(m==5)
-        int i=ric(libro, n);
-        cout<<endl;
-        
         modifica_campi(libro, n);
         cout<<endl;
 
