@@ -1,8 +1,3 @@
-#include <iostream>
-#define DIM 50
-
-using namespace std;
-
 /*!
  \author Maruzzi Giuia
  \file Esercitazione completa
@@ -10,16 +5,25 @@ using namespace std;
  \brief programma per la gestione della biblioteca e la relativa catalogazione dei libri
  */
 
+#include <iostream>
+#define DIM 50
+
+using namespace std;
+
 struct Anag
 {
     string isbn, titolo, autore, editore, anno, prezzo, tag;
 };
 
-//! \fn inserimento
+
+//! \fn inserimento(Anag libro[])
 //!  \brief acquisizione libri e informazioni relative
+//!  \param inp  informazioni libro
+//!   \param outp numero libri
 
 int inserimento(Anag libro[])
 {
+    
     int n;
     cout<<"Quanti libri vuoi inserire?";
     cin>>n;
@@ -47,6 +51,8 @@ int inserimento(Anag libro[])
 
 //! \fn stampa
 //!  \brief visualizzazione catalogo
+//!   \param inp informazioni libro
+//! \param inp numero libiri
 void stampa (Anag libro[], int n)
 {
     for(int i=0; i<n; i++)
@@ -65,6 +71,9 @@ void stampa (Anag libro[], int n)
 //! \fn ric
 //!  \brief ricerca libro nel catalogo
 //!  \return indice libro ricercato
+//!    \param inp informazioni libro
+//! \param inp numero libiri
+
 int ric(Anag libro[], int n)
 {
     string cod;
@@ -85,6 +94,8 @@ int ric(Anag libro[], int n)
 
 //! \fn modifica_campi
 //!  \brief effettuare modifiche
+//!  \param[in] informazioni libro
+//! \param[in] numero libiri
 void modifica_campi(Anag libro[], int n)
 {
     int campo;
@@ -142,6 +153,8 @@ void modifica_campi(Anag libro[], int n)
 //! \fn elimina_record
 //!  \brief cancellazione libro
 //!   \return numero di libri nel catalogo
+//!   \param[in] informazioni libro
+//! \param[in] numero libiri
 int elimina_record(Anag libro[], int n)
 {
     int cod=ric(libro, n);
@@ -162,7 +175,9 @@ int elimina_record(Anag libro[], int n)
 }
 
 //! \fn menu
-
+//! \param[in] informazioni libro
+//! \param[in] numero libiri
+//!  \param[in] scelta del menu
 void menu(int n, Anag libro[], int m)
 {
     do{
