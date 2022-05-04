@@ -3,10 +3,20 @@
 
 using namespace std;
 
+/*!
+ \author Maruzzi Giuia
+ \file Esercitazione completa
+ \date 04/05/2022
+ \brief programma per la gestione della biblioteca e la relativa catalogazione dei libri
+ */
+
 struct Anag
 {
     string isbn, titolo, autore, editore, anno, prezzo, tag;
 };
+
+//! \fn inserimento
+//!  \brief acquisizione libri e informazioni relative
 
 int inserimento(Anag libro[])
 {
@@ -35,6 +45,8 @@ int inserimento(Anag libro[])
     return n;
 }
 
+//! \fn stampa
+//!  \brief visualizzazione catalogo
 void stampa (Anag libro[], int n)
 {
     for(int i=0; i<n; i++)
@@ -50,6 +62,9 @@ void stampa (Anag libro[], int n)
     }
 }
 
+//! \fn ric
+//!  \brief ricerca libro nel catalogo
+//!  \return indice libro ricercato
 int ric(Anag libro[], int n)
 {
     string cod;
@@ -68,6 +83,8 @@ int ric(Anag libro[], int n)
     return 0;
 }
 
+//! \fn modifica_campi
+//!  \brief effettuare modifiche
 void modifica_campi(Anag libro[], int n)
 {
     int campo;
@@ -122,6 +139,9 @@ void modifica_campi(Anag libro[], int n)
     }
 }
 
+//! \fn elimina_record
+//!  \brief cancellazione libro
+//!   \return numero di libri nel catalogo
 int elimina_record(Anag libro[], int n)
 {
     int cod=ric(libro, n);
@@ -129,7 +149,7 @@ int elimina_record(Anag libro[], int n)
         cout<<" Libro cancellato.";
     else
         cout<<" Libro non cancellato, non è stato trovato.";
-    
+        
     libro[cod].isbn="";
     libro[cod].titolo="";
     libro[cod].autore="";
@@ -140,6 +160,8 @@ int elimina_record(Anag libro[], int n)
 
     return n-1;
 }
+
+//! \fn menu
 
 void menu(int n, Anag libro[], int m)
 {
