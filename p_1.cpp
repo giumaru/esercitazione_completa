@@ -52,6 +52,19 @@ void stampa (Anag libro[], int n)
 
 int ric(Anag libro[], int n)
 {
+    string cod;
+    cout<<"\nLibro da cercare (inserire ISBN): ";
+    cin>>cod;
+    int i=0;
+    do{
+        if(libro[i].isbn==cod)
+        {
+            cout<<"\nLibro trovato.";
+           return i;
+        }
+        i++;
+    }while(i<n);
+    cout<<"\nLibro non trovato.";
     return 0;
 }
 
