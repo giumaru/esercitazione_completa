@@ -122,9 +122,23 @@ void modifica_campi(Anag libro[], int n)
     }
 }
 
-void elimina_record(Anag libro[], int n)
+int elimina_record(Anag libro[], int n)
 {
+    int cod=ric(libro, n);
+    if(cod!=0)
+        cout<<" Libro cancellato.";
+    else
+        cout<<" Libro non cancellato, non è stato trovato.";
     
+    libro[cod].isbn="";
+    libro[cod].titolo="";
+    libro[cod].autore="";
+    libro[cod].editore="";
+    libro[cod].anno="";
+    libro[cod].prezzo="";
+    libro[cod].tag="";
+
+    return n-1;
 }
 
 void menu(int n, Anag libro[], int m)
@@ -142,7 +156,7 @@ void menu(int n, Anag libro[], int m)
         cout<<endl;
 
     if(m==3)
-        elimina_record(libro, n);
+        n=elimina_record(libro, n);
         cout<<endl;
 
     if(m==4)
