@@ -10,7 +10,29 @@ struct Anag
 
 int inserimento(Anag libro[])
 {
-    return 0;
+    int n;
+    cout<<"Quanti libri vuoi inserire?";
+    cin>>n;
+
+    for(int i=0; i<n; i++)
+    {
+        cout<<"Libro n."<<i+1<<endl;
+        cout<<"Codice ISBN : ";
+        cin>>libro[i].isbn;
+        cout<<"Titolo : ";
+        cin>>libro[i].titolo;
+        cout<<"Autore : ";
+        cin>>libro[i].autore;
+        cout<<"Editore : ";
+        cin>>libro[i].editore;
+        cout<<"Anno di Pubblicazione : ";
+        cin>>libro[i].anno;
+        cout<<"Prezzo : ";
+        cin>>libro[i].prezzo;
+        cout<<"Tag del Genere : ";
+        cin>>libro[i].tag;
+    }
+    return n;
 }
 
 void stampa (Anag libro[], int n)
