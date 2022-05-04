@@ -1,10 +1,10 @@
-/*!
- \author Maruzzi Giuia
- \file Esercitazione completa
- \date 04/05/2022
- \brief programma per la gestione della biblioteca e la relativa catalogazione dei libri
- */
 
+/*! \mainpage <CENTER> Biblioteca</CENTER>
+ 
+ \author <B> Giulia Maruzzi</B>
+* \version <B> V10.0 </B>
+* \date <B>04/05/2022 </B>
+ */
 #include <iostream>
 #define DIM 50
 
@@ -15,11 +15,15 @@ struct Anag
     string isbn, titolo, autore, editore, anno, prezzo, tag;
 };
 
+//! \class [FUNZIONI]
 
-//! \fn inserimento(Anag libro[])
-//!  \brief acquisizione libri e informazioni relative
-//!  \param inp  informazioni libro
-//!   \param outp numero libri
+//! \relates FUNZIONI
+/*!\fn inserimento(Anag libro[])
+\brief acquisizione libri e informazioni relative
+  \param inp  informazioni libro
+
+ \return numero libri
+ */
 
 int inserimento(Anag libro[])
 {
@@ -48,7 +52,7 @@ int inserimento(Anag libro[])
     }
     return n;
 }
-
+//! \relates FUNZIONI
 //! \fn stampa
 //!  \brief visualizzazione catalogo
 //!   \param inp informazioni libro
@@ -67,7 +71,7 @@ void stampa (Anag libro[], int n)
         cout<<"\nTag del Genere : "<<libro[i].tag;
     }
 }
-
+//! \relates FUNZIONI
 //! \fn ric
 //!  \brief ricerca libro nel catalogo
 //!  \return indice libro ricercato
@@ -91,7 +95,7 @@ int ric(Anag libro[], int n)
     cout<<"\nLibro non trovato.";
     return 0;
 }
-
+//! \relates FUNZIONI
 //! \fn modifica_campi
 //!  \brief effettuare modifiche
 //!  \param[in] informazioni libro
@@ -149,7 +153,7 @@ void modifica_campi(Anag libro[], int n)
         cin>>libro[cod].tag;
     }
 }
-
+//! \relates FUNZIONI
 //! \fn elimina_record
 //!  \brief cancellazione libro
 //!   \return numero di libri nel catalogo
@@ -173,7 +177,7 @@ int elimina_record(Anag libro[], int n)
 
     return n-1;
 }
-
+//! \relates FUNZIONI
 //! \fn menu
 //! \param[in] informazioni libro
 //! \param[in] numero libiri
