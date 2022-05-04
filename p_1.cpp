@@ -37,7 +37,17 @@ int inserimento(Anag libro[])
 
 void stampa (Anag libro[], int n)
 {
-
+    for(int i=0; i<n; i++)
+    {
+        cout<<"\nLibro n."<<i+1;
+        cout<<"\nCodice ISBN : "<<libro[i].isbn;
+        cout<<"\nTitolo :"<<libro[i].titolo;
+        cout<<"\nAutore : "<<libro[i].autore;
+        cout<<"\nEditore : "<<libro[i].editore;
+        cout<<"\nAnno di Pubblicazione : "<<libro[i].anno;
+        cout<<"\nPrezzo : "<<libro[i].prezzo;
+        cout<<"\nTag del Genere : "<<libro[i].tag;
+    }
 }
 
 int ric(Anag libro[], int n)
